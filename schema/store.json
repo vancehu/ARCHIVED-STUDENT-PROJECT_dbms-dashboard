@@ -1,0 +1,257 @@
+{
+    "cols": [
+        {
+            "name": "sid",
+            "editable": "0",
+            "label": "Store ID",
+            "dataType": "is",
+            "hide": "0",
+            "searchable": "1",
+            "sortable": "1",
+            "defaultSortOrder": "0",
+            "width": "10%",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Store id is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Store id is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "zipcode",
+            "editable": "1",
+            "searchable": "1",
+            "sortable": "1",
+            "label": "Zipcode",
+            "dataType": "is",
+            "hide": "0",
+            "defaultSortOrder": "0",
+            "width": "10%",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Zipcode is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Zipcode is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "street",
+            "editable": "1",
+            "searchable": "1",
+            "sortable": "0",
+            "label": "Street",
+            "dataType": "like",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "40%",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Street contains ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Street excludes ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "city",
+            "editable": "0",
+            "searchable": "0",
+            "sortable": "0",
+            "label": "City",
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "10%",
+            "tagTokens": [
+                {
+                    "token1": "City is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "City is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "state",
+            "editable": "0",
+            "searchable": "1",
+            "sortable": "1",
+            "label": "State",
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "10%",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "State is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "State is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "rid",
+            "editable": "1",
+            "sortable":"1",
+            "searchable": "1",
+            "label": "Region",
+            "hide": "0",
+            "dataType": "datapair",
+            "defaultSortOrder": "0",
+            "pair": {
+                "show": "rname",
+                "source": "server/region/getSimple.php?sort=rname&order=0"
+            },
+            "width": "10%",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Is in ",
+                    "token2": " region"
+                },
+                {
+                    "token1": "Is not in ",
+                    "token2": " region"
+                }
+            ]
+        },
+                {
+            "name": "rname",
+            "editable": "0",
+            "sortable":"0",
+            "searchable": "0",
+            "label": "Region",
+            "hide": "1",
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "width": "0%",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Is in ",
+                    "token2": " region"
+                },
+                {
+                    "token1": "Is not in ",
+                    "token2": " region"
+                }
+            ]
+        },
+        {
+            "name": "eid",
+            "editable": "1",
+            "label": "Manager",
+            "hide": "0",
+            "dataType": "datapair",
+            "defaultSortOrder": "0",
+            "pair": {
+                "show": "ename",
+                "source": "server/employee/getSimple.php?sort=ename&order=0"
+            },
+            "width": "20%",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "The manager is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "The manager is not ",
+                    "token2": ""
+                }
+            ]
+        }
+    ],
+    "pageinfo": {
+        "editable": "1",
+        "addable": "1",
+        "aggregation_mode": "0",
+        "key": "0",
+        "add_button_text": "Add new store",
+        "title": "Store Manager",
+        "intro": "Manage store manager."
+    }
+}

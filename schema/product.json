@@ -1,0 +1,190 @@
+{
+    "cols": [
+        {
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "editable": "0",
+            "hide": "0",
+            "label": "Product ID",
+            "name": "pid",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Product id is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Product id is not ",
+                    "token2": ""
+                }
+            ],
+            "width": "15%"
+        },
+        {
+            "dataType": "like",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Product Name",
+            "name": "pname",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Product Name contains ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Product Name excludes ",
+                    "token2": ""
+                }
+            ],
+            "width": "30%"
+        },
+        {
+            "dataType": "datapair",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Product Category",
+            "name": "p_cid",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "pair": {
+                "show": "p_cname",
+                "source": "server/product_category/get.php?sort=p_cname&order=0"
+            },
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Is in ",
+                    "token2": " category"
+                },
+                {
+                    "token1": "Is not in ",
+                    "token2": " category"
+                }
+            ],
+            "width": "35%"
+        },
+        {
+            "dataType": "currency",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Price",
+            "name": "price",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Price equals ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Price is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Price is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Price is between ",
+                    "token2": " and ",
+                    "token3": ""
+                }
+            ],
+            "width": "15%"
+        },
+          {
+            "dataType": "positive",
+            "defaultSortOrder": "0",
+            "editable": "0",
+            "hide": "0",
+            "label": "Inventory Quantity",
+            "name": "inventory_quantity",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Inventory Quantit equals ",
+                    "token2": ""
+                },
+                {
+                    "token1": "inventory_quantity is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "inventory_quantity is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "inventory_quantity is between ",
+                    "token2": " and ",
+                    "token3": ""
+                }
+            ],
+            "width": "15%"
+        }
+    ],
+    "pageinfo": {
+        "add_button_text": "Add new product",
+        "addable": "1",
+        "aggregation_mode": "0",
+        "editable": "1",
+        "intro": "Manage products here.",
+        "key": "0",
+        "title": "Product Manager"
+    }
+}

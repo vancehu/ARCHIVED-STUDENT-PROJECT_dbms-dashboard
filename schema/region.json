@@ -1,0 +1,110 @@
+{
+  "cols": [
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "0",
+      "hide": "0",
+      "label": "Region ID",
+      "name": "rid",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "tagTokens": [
+        {
+          "token1": "Region id is ",
+          "token2": ""
+        },
+        {
+          "token1": "Region id is not ",
+          "token2": ""
+        }
+      ],
+      "width": "10%"
+    },
+    {
+      "dataType": "like",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Region Name",
+      "name": "rname",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "tagTokens": [
+        {
+          "token1": "Region name contains ",
+          "token2": ""
+        },
+        {
+          "token1": "Region name excludes ",
+          "token2": ""
+        }
+      ],
+      "width": "45%"
+    },
+    {
+      "dataType": "datapair",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Region Manager",
+      "name": "eid",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "pair": {
+        "show": "ename",
+        "source": "server/employee/getSimple.php?sort=ename&order=0"
+      },
+      "searchable": "1",
+      "sortable": "0",
+      "tagTokens": [
+        {
+          "token1": "The region manager is ",
+          "token2": ""
+        },
+        {
+          "token1": "The region manager is not ",
+          "token2": ""
+        }
+      ],
+      "width": "35%"
+    }
+  ],
+  "pageinfo": {
+    "add_button_text": "Add new region",
+    "addable": "1",
+    "aggregation_mode": "0",
+    "editable": "1",
+    "intro": "Manage region manager here.",
+    "key": "0",
+    "title": "Region Manager"
+  }
+}

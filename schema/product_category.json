@@ -1,0 +1,75 @@
+{
+    "cols": [
+        {
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "editable": "0",
+            "hide": "0",
+            "label": "Product Category ID",
+            "name": "p_cid",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Product Category id is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Product Category id is not ",
+                    "token2": ""
+                }
+            ],
+            "width": "25%"
+        },
+        {
+            "dataType": "like",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Product Category Name",
+            "name": "p_cname",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "searchable": "1",
+            "sortable": "1",
+            "tagTokens": [
+                {
+                    "token1": "Product Category Name contains ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Product Category Name excludes ",
+                    "token2": ""
+                }
+            ],
+            "width": "70%"
+        }
+    ],
+    "pageinfo": {
+        "add_button_text": "Add new category",
+        "addable": "1",
+        "aggregation_mode": "0",
+        "editable": "1",
+        "intro": "Manage product category here.",
+        "key": "0",
+        "title": "Product Category Manager"
+    }
+}

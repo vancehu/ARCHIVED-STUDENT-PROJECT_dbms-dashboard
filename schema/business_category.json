@@ -1,0 +1,79 @@
+{
+    "cols": [
+        {
+            "name": "b_cid",
+            "editable": "0",
+            "value": "0",
+            "label": "Businsess Category ID",
+            "dataType": "is",
+            "hide": "0",
+            "defaultSortOrder": "0",
+            "width": "25%",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "searchable":"1",
+            "sortable":"1",
+            "tagTokens": [
+                {
+                    "token1": "Businsess Category id is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Businsess Category id is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "b_cname",
+            "editable": "1",
+            "value": "1",
+            "label": "Businsess Category Name",
+            "dataType": "like",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "65%",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                      "value": "1"
+                }
+            ],
+             "searchable":"1",
+            "sortable":"1",
+            "tagTokens": [
+                {
+                    "token1": "Businsess Category Name contains ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Businsess Category Name excludes ",
+                    "token2": ""
+                }
+            ]
+        }
+    ],
+    "pageinfo": {
+
+        "editable": "1",
+        "addable": "1",
+        "aggregation_mode": "0",
+        "key": "0",
+        
+        "add_button_text": "Add new category",
+        "title": "Businsess Category Manager",
+        "intro": "Manage business category here."
+    }
+}

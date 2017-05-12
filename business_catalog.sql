@@ -1,0 +1,16 @@
+INSERT INTO business_category VALUES (NULL,'Travel & Transportation');
+INSERT INTO business_category VALUES (NULL,'Real Estate');
+INSERT INTO business_category VALUES (NULL,'Personal Care & Services');
+INSERT INTO business_category VALUES (NULL,'Miscellaneous');
+INSERT INTO business_category VALUES (NULL,'Merchants (Retail)');
+INSERT INTO business_category VALUES (NULL,'Manufacturing, Wholesale, Distribution');
+INSERT INTO business_category VALUES (NULL,'Legal & Financial');
+INSERT INTO business_category VALUES (NULL,'Home & Garden');
+INSERT INTO business_category VALUES (NULL,'Health & Medicine');
+INSERT INTO business_category VALUES (NULL,'Food & Dining');
+INSERT INTO business_category VALUES (NULL,'Entertainment');
+INSERT INTO business_category VALUES (NULL,'Education');
+INSERT INTO business_category VALUES (NULL,'Construction & Contractors');
+INSERT INTO business_category VALUES (NULL,'Computers & Electronics');
+INSERT INTO business_category VALUES (NULL,'Business Support & Supplies');
+INSERT INTO business_category VALUES (NULL,'Automotive');

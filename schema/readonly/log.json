@@ -1,0 +1,79 @@
+{
+  "cols": [
+    {
+      "dataType": "date",
+      "defaultSortOrder": "0",
+      "hide": "0",
+      "editable": "0",
+      "label": "Event time",
+      "name": "logtime",
+      "orderTokens": [
+        {
+          "token": "Oldest first",
+          "value": "0"
+        },
+        {
+          "token": "Newest first",
+          "value": "1"
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "width": "20%"
+    },
+    {
+      "bool": [
+        {
+          "label": "Operation"
+        },
+        {
+          "label": "Error"
+        }
+      ],
+      "dataType": "bool",
+      "editable": "0",
+      "hide": "1",
+      "label": "Message type",
+      "name": "is_error",
+      "orderTokens": [
+        {
+          "token": "Operations first",
+          "value": "0"
+        },
+        {
+          "token": "Errors first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token": "Show opertions only "
+        },
+        {
+          "token": "Show errors only"
+        }
+      ],
+      "sortable": "1",
+      "searchable": "1"
+    },
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "0",
+      "hide": "0",
+      "label": "Detail message",
+      "name": "detail",
+      "searchable": "0",
+      "sortable": "0",
+      "width": "80%"
+    }
+  ],
+  "pageinfo": {
+    "addable": "0",
+    "editable": "0",
+    "aggregation_mode": "0",
+    "intro": "Readonly. See all the logged events here.",
+    "key": "0",
+    "title": "Log Viewer"
+  }
+}

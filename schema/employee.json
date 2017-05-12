@@ -1,0 +1,338 @@
+{
+  "cols": [
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "0",
+      "hide": "0",
+      "label": "Employee ID",
+      "name": "eid",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "tagTokens": [
+        {
+          "token1": "Employee id is ",
+          "token2": ""
+        },
+        {
+          "token1": "Employee id is not ",
+          "token2": ""
+        }
+      ],
+      "width": "5%"
+    },
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Store ID",
+      "name": "sid",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Store ID is ",
+          "token2": ""
+        },
+        {
+          "token1": "Store ID is not ",
+          "token2": ""
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "width": "8%"
+    },
+    {
+      "dataType": "like",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Employee Name",
+      "name": "ename",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "tagTokens": [
+        {
+          "token1": "Employee name contains ",
+          "token2": ""
+        },
+        {
+          "token1": "Employee name excludes ",
+          "token2": ""
+        }
+      ],
+      "width": "15%"
+    },
+    {
+      "dataType": "currency",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Salary",
+      "name": "salary",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "tagTokens": [
+        {
+          "token1": "Salary equals ",
+          "token2": ""
+        },
+        {
+          "token1": "Salary is not greater than ",
+          "token2": ""
+        },
+        {
+          "token1": "Salary is not greater than ",
+          "token2": ""
+        },
+        {
+          "token1": "Salary is between ",
+          "token2": " and ",
+          "token3": ""
+        }
+      ],
+      "width": "7%"
+    },
+    {
+      "dataType": "datapair",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Job Title",
+      "name": "jid",
+      "searchable": "1",
+      "sortable": "1",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "pair": {
+        "show": "title",
+        "source": "server/job_title/get.php?sort=title&order=0"
+      },
+      "tagTokens": [
+        {
+          "token1": "The title is ",
+          "token2": ""
+        },
+        {
+          "token1": "The title is not ",
+          "token2": ""
+        }
+      ],
+      "width": "10%"
+    },
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "collapse": "0",
+      "label": "Email",
+      "name": "email",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Email is ",
+          "token2": ""
+        },
+        {
+          "token1": "Email is not ",
+          "token2": ""
+        }
+      ],
+      "searchable": "0",
+      "sortable": "0",
+      "width": "15%"
+    },
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "label": "Zipcode",
+      "name": "zipcode",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Zipcode is ",
+          "token2": ""
+        },
+        {
+          "token1": "Zipcode is not ",
+          "token2": ""
+        }
+      ],
+      "searchable": "1",
+      "sortable": "0",
+      "width": "5%"
+    },
+    {
+      "dataType": "like",
+      "defaultSortOrder": "0",
+      "editable": "1",
+      "hide": "0",
+      "collapse": "0",
+      "label": "Street",
+      "name": "street",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Street contains ",
+          "token2": ""
+        },
+        {
+          "token1": "Street excludes ",
+          "token2": ""
+        }
+      ],
+      "searchable": "1",
+      "sortable": "0",
+      "width": "20%"
+    },
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "0",
+      "hide": "0",
+      "label": "City",
+      "name": "city",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "City is ",
+          "token2": ""
+        },
+        {
+          "token1": "City is not ",
+          "token2": ""
+        }
+      ],
+      "searchable": "0",
+      "sortable": "0",
+      "width": "8%"
+    },
+    {
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "editable": "0",
+      "hide": "0",
+      "label": "State",
+      "name": "state",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "State is ",
+          "token2": ""
+        },
+        {
+          "token1": "State is not ",
+          "token2": ""
+        }
+      ],
+      "searchable": "1",
+      "sortable": "1",
+      "width": "3%"
+    }
+  ],
+  "pageinfo": {
+    "add_button_text": "Add new employee",
+    "addable": "1",
+    "aggregation_mode": "0",
+    "editable": "1",
+    "intro": "Manage employees here.",
+    "key": "0",
+    "title": "Employee Manager"
+  }
+}

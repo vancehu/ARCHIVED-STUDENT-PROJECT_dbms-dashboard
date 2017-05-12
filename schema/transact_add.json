@@ -1,0 +1,175 @@
+{
+    "cols": [
+        {
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "editable": "0",
+            "hide": "0",
+            "label": "Order ID",
+            "name": "order_id",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Order id is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Order id is not ",
+                    "token2": ""
+                }
+            ],
+            "searchable":"1",
+            "sortable":"1",
+            "width": "15%"
+        },
+        {
+            "dataType": "date",
+            "defaultSortOrder": "0",
+            "editable": "0",
+            "label": "Order time",
+            "name": "order_time",
+            "orderTokens": [
+                {
+                    "token": "Oldest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Newest first",
+                    "value": "1"
+                }
+            ],
+            "searchable":"1",
+            "sortable":"1",
+            "width": "25%"
+        },
+         {
+            "dataType": "datapair",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Product",
+            "name": "pid",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "pair": {
+                "show": "pname",
+                "source": "server/product/getSimple.php?sort=pname&order=0"
+            },
+            "tagTokens": [
+                {
+                    "token1": "Product is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Product is not ",
+                    "token2": ""
+                }
+            ],
+            
+            "searchable":"1",
+            "sortable":"1",
+            "width": "25%"
+        },
+        {
+            "dataType": "positive",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Quantity",
+            "name": "quantity",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Quantity equals ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Quantity is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Quantity is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Quantity is between ",
+                    "token2": " and ",
+                    "token3": ""
+                }
+            ],
+            "searchable":"1",
+            "sortable":"1",
+            "width": "10%"
+        },
+        {
+            "dataType": "datapair",
+            "defaultSortOrder": "0",
+            "editable": "1",
+            "hide": "0",
+            "label": "Operator",
+            "name": "eid",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "pair": {
+                "show": "ename",
+                "source": "server/employee/getSimple.php?sort=ename&order=0"
+            },
+            "tagTokens": [
+                {
+                    "token1": "The employee is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "The employee is not ",
+                    "token2": ""
+                }
+            ],
+                       "searchable":"1",
+            "sortable":"1",
+            "width": "20%"
+        }
+    ],
+    "pageinfo": {
+        "add_button_text": "Add transaction",
+        "addable": "1",
+        "aggregation_mode": "0",
+        "editable": "0",
+        "intro": "Here is the stock adding history from all the employees.",
+        "key": "0",
+        "title": "Stock adding Manager"
+    }
+}

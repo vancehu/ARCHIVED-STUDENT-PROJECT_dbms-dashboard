@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular-route.min.js"></script>
+  <script type="text/javascript" src="app/ui-bootstrap-tpls-0.12.0.min.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+
+  <title>DMBS Demo</title>
+</head>
+
+<body ng-controller="NavbarController">
+  <div class="row clearfix">
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><a href="#/home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+            <li ng-show="$root.currUser.type != undefined"><a href="#/readonly/report">Sales Report</a></li>
+            <li ng-show="$root.currUser.type === 'customer'"><a href="#/readonly/transact_sell_cus">Purchase History</a></li>
+            <li dropdown ng-show="$root.currUser.type === 'admin'"><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-user"></i> Transaction<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/admin/transact_sell"><i class="glyphicon glyphicon-home"></i> Selling History</a></li>
+                <li><a href="#/admin/transact_add"><i class="glyphicon glyphicon-briefcase"></i> Stock Adding History</a></li>
+              </ul>
+            </li>
+            <li dropdown  ng-show="$root.currUser.type === 'admin'"><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-user"></i> Customer<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/admin/home_customer"><i class="glyphicon glyphicon-home"></i> Home Customer</a></li>
+                <li><a href="#/admin/business_customer"><i class="glyphicon glyphicon-briefcase"></i> Business Customer</a></li>
+                <li><a href="#/admin/business_category"><i class="glyphicon glyphicon-th"></i> Business Category</a></li>
+              </ul>
+            </li>
+            <li dropdown  ng-show="$root.currUser.type === 'admin'"><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-shopping-cart"></i> Product<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/admin/product"><i class="glyphicon glyphicon-shopping-cart"></i> Product</a></li>
+                <li><a href="#/admin/product_category"><i class="glyphicon glyphicon-th"></i> Product Category</a></li>
+              </ul>
+            </li>
+            <li ng-show="$root.currUser.type === 'admin'" dropdown><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-shopping-cart"></i> Employee<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/admin/employee"><i class="glyphicon glyphicon-user"></i> Employee</a></li>
+                <li><a href="#/admin/job_title"><i class="glyphicon glyphicon-star-empty"></i> Job title</a></li>
+              </ul>
+            </li>
+            <li ng-show="$root.currUser.type === 'admin'" dropdown><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-shopping-cart"></i> Store<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/admin/store"><i class="glyphicon glyphicon-th"></i> Store</a></li>
+                <li><a href="#/admin/region"><i class="glyphicon glyphicon-th"></i> Region</a></li>
+              </ul>
+            </li>
+            <li ng-show="$root.currUser.type === 'employee'"><a href="#/admin/transact_add_emp">Add to inventory</a></li>
+            <li ng-show="$root.currUser.type === 'employee'"><a href="#/admin/transact_sell_emp">Sell products</a></li>
+
+            <li dropdown  ng-show="$root.currUser.type === 'employee'"><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-user"></i> Customer<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/readonly/home_customer"><i class="glyphicon glyphicon-home"></i> Home Customer</a></li>
+                <li><a href="#/readonly/business_customer"><i class="glyphicon glyphicon-briefcase"></i> Business Customer</a></li>
+                <li><a href="#/readonly/business_category"><i class="glyphicon glyphicon-th"></i> Business Category</a></li>
+              </ul>
+            </li>
+            <li dropdown  ng-show="$root.currUser.type === 'employee'"><a href="#" class="dropdown-toggle" dropdown-toggle><i class="glyphicon glyphicon-shopping-cart"></i> Product<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/readonly/product"><i class="glyphicon glyphicon-shopping-cart"></i> Product</a></li>
+                <li><a href="#/readonly/product_category"><i class="glyphicon glyphicon-th"></i> Product Category</a></li>
+              </ul>
+            </li>
+            <li ng-show="$root.currUser.type === 'customer'"><a href="#/readonly/product"><i class="glyphicon glyphicon-shopping-cart"></i> Product</a></li>
+            <li ng-show="$root.currUser.type === 'customer'"><a href="#/readonly/product_category"><i class="glyphicon glyphicon-th"></i> Product Category</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-show="$root.currUser.type === 'admin'"><a href="#/server/log">View Log</a></li>
+            <li ng-show="$root.currUser.type != undefined"><a href ng-click="$root.logOut()">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-view></div>
+</div>
+</div>
+</body>
+</html>

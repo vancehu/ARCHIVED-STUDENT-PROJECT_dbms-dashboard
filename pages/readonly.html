@@ -1,0 +1,246 @@
+<div ng-controller="CustomerController as ctrl" class="container">
+	<!-- introduction section -->
+	<div class="row clearfix">
+		<div class="col-md-8">
+			<h1 ng-bind="pageinfo.title">Loading...</h1>
+			<p ng-bind="pageinfo.intro"></p>
+		</div>
+		<div class="col-md-2 col-md-offset-2 add-padding-50">
+			<button ng-show="pageinfo.addable === '1'" class="btn btn-primary" ng-click="ctrl.startAdd()"><i class="glyphicon glyphicon-edit"></i> {{pageinfo.add_button_text}}</button>
+			<button ng-show="pageinfo.aggregation_mode === '1'" class="btn"><i class="glyphicon glyphicon-list"></i> Show statistics&nbsp;&nbsp;</button>
+		</div>
+	</div>
+
+	<!-- search section toggle link -->
+	<div class="row add-padding-25">
+		<div class="col-md-12">
+			<p class="clickable" ng-click="ctrl.expandSearchBox()" ng-hide="expand"><a><i class="glyphicon glyphicon-chevron-down"></i> Searching and sorting condition</a></p>
+			<p class="clickable" ng-click="ctrl.collapseSearchBox()" ng-show="expand"><a><i class="glyphicon glyphicon-chevron-up"></i> Searching and sorting condition</a></p>
+		</div>
+	</div>
+
+	<!-- search section, collapsed -->
+	<div class="row clickable" ng-click="ctrl.expandSearchBox()" collapse="expand">
+		<h4 class="col-md-12"><span ng-repeat="col in cols" ><span class="label label-default clickable" ng-bind-template="{{col.tag}}"></span>&nbsp;</span><span class="label label-default clickable" ng-bind-template="{{sortTag}}"></span> 
+		</h4>
+	</div>
+
+	<!-- search section, expanded -->
+	<div class="row" collapse="!expand">
+		<div class="well well-lg">
+			<div class="row">
+				<form ng-show="col.searchable === '1'" ng-repeat = "col in cols">
+					<div class="form-group col-md-4" ng-if="col.dataType === 'is'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="0">Is</option>
+							<option value="1">Is not</option>
+						</select>
+						<input ng-model="col.search.input" type="text" class="form-control" placeholder="Enter {{col.label}}">
+					</div>
+
+					<div class="form-group col-md-4" ng-if="col.dataType === 'like'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="0">Contains</option>
+							<option value="1">Excludes</option>
+						</select>
+						<input ng-model="col.search.input" type="text" class="form-control" placeholder="Enter Keywords">
+					</div>
+
+
+					<div class="form-group col-md-4" ng-if="col.dataType === 'datapair'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="0">Is</option>
+							<option value="1">Is not</option>
+						</select>
+						<input type="text" ng-model="col.search.input" typeahead="r[col.name] as r[col.name] + ' ' + r[col.pair.show] for r in col.records | filter:$viewValue | limitTo:8" class="form-control" placeholder="Enter to pair">
+					</div>
+
+					<div class="form-group col-md-4" ng-if="col.dataType === 'currency'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="0">Equals</option>
+							<option value="1">Not smaller than (&gt;=)</option>
+							<option value="2">Not greater than (&lt;=)</option>
+						</select>
+						<input ng-model="col.search.input1" type="text" class="form-control" placeholder="Enter Number">
+						<div ng-hide="col.search.option === '0' ">
+
+							<p ng-show="col.search.option === '1'">  and not greater than (&lt;= optional)</p>
+							<p ng-show="col.search.option === '2'">  and not smaller than (&gt;= optional)</p>
+						</div>
+						<input ng-hide="col.search.option === '0'" ng-model="col.search.input2" type="text" class="form-control" placeholder="Enter Number">
+					</div>
+
+					<div class="form-group col-md-4" ng-if="col.dataType === 'positive'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="0">Equals</option>
+							<option value="1">Not smaller than (&gt;=)</option>
+							<option value="2">Not greater than (&lt;=)</option>
+						</select>
+						<input ng-model="col.search.input1" type="text" class="form-control" placeholder="Enter Number">
+						<div ng-hide="col.search.option === '0' ">
+
+							<p ng-show="col.search.option === '1'">  and not greater than (&lt;= optional)</p>
+							<p ng-show="col.search.option === '2'">  and not smaller than (&gt;= optional)</p>
+						</div>
+						<input ng-hide="col.search.option === '0'" ng-model="col.search.input2" type="text" class="form-control" placeholder="Enter Number">
+					</div>
+
+					<div class="form-group col-md-4" ng-if="col.dataType === 'date'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="0">On</option>
+							<option value="1">Not earlier than</option>
+							<option value="2">Not later than</option>
+						</select>
+						<input type="text" datepicker-popup="MM/dd/yyyy" ng-model="col.search.input1" is-open="col.search.input1DP" ng-click = "col.search.input1DP = true"	ng-required="true"	close-text="Cancel" class="form-control" placeholder="Click to set"/>
+						<div ng-hide="col.search.option === '0' ">
+							<p ng-show="col.search.option === '1'">  and not later than (optional)</p>
+							<p ng-show="col.search.option === '2'">  and not earlier than (optional)</p>
+							<input type="text" datepicker-popup="MM/dd/yyyy" ng-model="col.search.input2" is-open="col.search.input2DP" ng-click = "col.search.input2DP = true"	ng-required="true"	close-text="Cancel" class="form-control" placeholder="Click to set"/>
+						</div>
+					</div>
+
+					<div class="form-group col-md-4" ng-if="col.dataType === 'bool'">
+						<label>{{col.label}}</label>
+						<select ng-model="col.search.option" class="form-control">
+							<option value="">All</option>
+							<option value="0">{{col.bool[0].label}}</option>
+							<option value="1">{{col.bool[1].label}}</option>
+						</select>
+					</div>
+
+
+				</form>
+				<!-- Sort -->
+				<form>
+					<div class="form-group col-md-4">
+						<label>Sort by</label>
+						<select ng-model="sortBy"  ng-change="sortOrder = '0'" class="form-control">
+							<option ng-repeat="col in cols" ng-show="col.sortable ==='1'" value="{{$index}}">{{col.label}}</option>
+						</select>
+
+						<select ng-model="sortOrder" ng-options="option.value as option.token for option in cols[sortBy].orderTokens"  class="form-control"></select>
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-9 col-md-3">
+					<button class="btn btn-primary" ng-click="ctrl.applySearch()">Apply</button>
+					<button class="btn" ng-click="ctrl.resetButton()">Reset</button>
+					<button class="btn" ng-click="ctrl.collapseSearchBox()">Cancel</button>
+				</div>
+			</div>
+		</div> 
+	</div>
+
+	<!-- table section -->
+	<div class="row table-height">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th ng-style="{ width: col.width }" ng-hide="col.hide === '1'" ng-repeat="col in cols" ng-bind="col.label"></th>
+				</tr>
+			</thead>
+
+			<!-- show when loading -->
+			<tbody ng-show="loadwaiting">
+				<tr>
+					<td colspan="100%">
+						<i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i> Loading...
+					</td>
+				</tr>
+			</tbody>
+
+			<!-- show after loaded -->
+			<tbody ng-hide="loadwaiting">
+				<tr ng-show="addMode">
+					<td class="warning" ng-hide="col.hide === '1'" ng-repeat="col in cols">
+						<div ng-if="col.editable !== '1' ">New</div>
+						<div ng-if="col.editable === '1'">
+							<div ng-if="col.dataType === 'is' || col.dataType === 'like'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="newRecord[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'currency'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="newRecord[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'positive'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="newRecord[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'integer'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="newRecord[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'datapair'" class="col-centered">
+							
+								<input type="text" ng-model="newRecord[col.name]" typeahead="r[col.name] as r[col.name] + ' ' + r[col.pair.show] for r in col.records | filter:$viewValue | limitTo:8" class="form-control-compact">
+							
+							</div>
+							<div ng-if="col.dataType === 'bool'" class="col-centered">
+													<select ng-model="newRecord[col.name]" class="form-control-compact">
+							<option value="">All</option>
+							<option value="0">{{col.bool[0].label}}</option>
+							<option value="1">{{col.bool[1].label}}</option>
+						</select>
+
+							</div>
+						</div>
+					</td>
+				</tr> 
+				<tr ng-repeat="record in records">
+					<!-- view mode -->
+					<td ng-class="{danger: record.is_error === '1'}" ng-repeat="col in cols" ng-hide="record.editMode || col.hide === '1'">
+					<div ng-show="col.collapse === '1'"><i class="glyphicon glyphicon-eye-open"></i></div>
+					<div ng-show="col.collapse !== '1'">{{ctrl.showProperValue(record, col)}}</div>
+
+					</td>
+					<!-- edit mode -->
+					<td class="warning" ng-repeat="col in cols" ng-show="record.editMode && col.hide !== '1'">
+						<div ng-if="col.editable !== '1' ">{{record[col.name]}}</div>
+						<div ng-if="col.editable === '1'">
+							<div ng-if="col.dataType === 'is' || col.dataType === 'like'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="record[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'currency'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="record[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'positive'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="record[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'integer'" class="col-centered">
+								<input type="text" class="form-control-compact" ng-model="record[col.name]">
+							</div>
+							<div ng-if="col.dataType === 'datapair'" class="col-centered">
+								<input type="text" ng-model="record[col.name]" typeahead="r[col.name] as r[col.name] + ' ' + r[col.pair.show] for r in col.records | filter:$viewValue | limitTo:8" class="form-control-compact">
+							</div>
+							<div ng-if="col.dataType === 'bool'" class="col-centered">
+													<select ng-model="record[col.name]" class="form-control-compact">
+							<option value="">All</option>
+							<option value="0">{{col.bool[0].label}}</option>
+							<option value="1">{{col.bool[1].label}}</option>
+						</select>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- search and add tool section -->
+	<div class="row">
+		<div class="col-md-3">
+			<h5 ng-bind-template="Showing {{page*10-9}}-{{page*10>count?count:page*10}} of {{count}} total results">Loading...</h5>
+		</div>
+		<div class="col-md-3 pull-right">
+			<pagination boundary-links="true" total-items="count" max-size="4" ng-model="page" ng-change="ctrl.applySearch()" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+		</div> 
+
+	</div>
+
+
+</div>

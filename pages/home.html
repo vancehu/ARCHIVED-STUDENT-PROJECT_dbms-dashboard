@@ -1,0 +1,84 @@
+<div ng-controller="LoginController" class="container">
+	<div class="container" ng-controller="AlertCtrl">
+		<alert ng-repeat="alert in $root.alerts" type="{{alert.type}}" close="$root.closeAlert($index)" ng-click="$root.closeAlert($index)">{{alert.msg}}</alert>
+	</div>
+	<div ng-hide="$root.isLoggedIn()" id="login">
+
+		<div id="customer" class="col-md-3 well">
+			<form>
+				<legend>Customer Login</legend>
+
+				<div class="form-group">
+					<label for="">Customer ID</label>
+					<input ng-model="cid"  type="text" class="form-control" id="" placeholder="Input customer ID">
+				</div>		
+				<div class="form-group">
+					<label for="">Password</label>
+					<input ng-model="cPassword"  type="password" class="form-control" id="" placeholder="Input password">
+				</div>
+
+
+
+				<button ng-click="loginCustomer()" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<div id="employee" class="col-md-3 col-md-offset-1 well">
+			<form>
+				<legend>Employee Login</legend>
+
+				<div class="form-group">
+					<label for="">Empolyee ID</label>
+					<input ng-model="eid"  type="text" class="form-control" id="" placeholder="Input employee ID">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input ng-model="ePassword"  type="password" class="form-control" id="" placeholder="Input password">
+				</div>
+
+
+				<button ng-click="loginEmployee()"  class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<div id="admin" class="col-md-3 col-md-offset-1 well">
+			<form>
+				<legend>Administrator</legend>
+
+				<div class="form-group">
+					<label>Demo - no password required</label>
+					<!--<input ng-model="adminPassword" type="password" class="form-control" placeholder="Input password">-->
+				</div>
+				<button ng-click="loginAdmin()" class="btn btn-success">proceed</button>
+			</form>
+		</div>
+	</div>
+	<div ng-show="$root.isLoggedIn()" id="welcome">
+	<div id="admin" ng-show="$root.currUser.type === 'admin'">
+	<h1>Welcome Admin</h1>
+	<p>You can view, add, edit all the information and view log.</p>
+	<p>Click links on the navigation bar to continue.</p>
+	</div>
+	<div id="employee" ng-show="$root.currUser.type === 'employee'">
+	<h1>Welcome Employee: {{$root.currUser.info.ename}}</h1>
+	<p>You can view product and their category list, customers' information, add or sell products.</p>
+	<p>Click links on the navigation bar to continue.</p>
+	<blockquote><h3>Your information</h3>
+	<p>Employee ID: {{$root.currUser.info.eid}}</p>
+	<p>Salary: {{$root.currUser.info.salary}}</p>
+	<p>Email: {{$root.currUser.info.email}}</p>
+	<p>Zipcode: {{$root.currUser.info.zipcode}}</p>
+	<p>Street: {{$root.currUser.info.street}}</p>
+	<p>Store ID: {{$root.currUser.info.sid}}</p>
+	</blockquote>
+	</div>
+		<div id="customer" ng-show="$root.currUser.type === 'customer'">
+	<h1>Welcome Customer: {{$root.currUser.info.cname}}</h1>
+	<p>You can view products and their category list.</p>
+	<p>Click links on the navigation bar to continue.</p>
+	<blockquote><h3>Your information</h3>
+	<p ng-hide="$root.currUser.info.cid == undefined">Customer ID: {{$root.currUser.info.cid}}</p>
+	<p ng-hide="$root.currUser.info.zipcode == undefined">Zipcode: {{$root.currUser.info.zipcode}}</p>
+	<p ng-hide="$root.currUser.info.street == undefined">Street: {{$root.currUser.info.street}}</p>
+	</blockquote>
+	</div>
+	</div>
+</div>

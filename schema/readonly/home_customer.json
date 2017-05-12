@@ -1,0 +1,351 @@
+{
+  "cols": [
+    {
+      "name": "cid",
+      "editable": "0",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Customer ID",
+      "dataType": "is",
+      "hide": "0",
+      "defaultSortOrder": "0",
+      "width": "10%",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Customer ID is ",
+          "token2": ""
+        },
+        {
+          "token1": "Customer ID is not ",
+          "token2": ""
+        }
+      ]
+    },
+    {
+      "name": "cname",
+      "editable": "1",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Customer Name",
+      "dataType": "like",
+      "defaultSortOrder": "0",
+      "hide": "0",
+      "width": "20%",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Customer name contains ",
+          "token2": ""
+        },
+        {
+          "token1": "Customer name excludes ",
+          "token2": ""
+        }
+      ]
+    },
+    {
+      "name": "salary",
+      "editable": "1",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Salary",
+      "dataType": "currency",
+      "defaultSortOrder": "0",
+      "width": "8%",
+      "hide": "0",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Salary equals ",
+          "token2": ""
+        },
+        {
+          "token1": "Salary is not greater than ",
+          "token2": ""
+        },
+        {
+          "token1": "Salary is not greater than ",
+          "token2": ""
+        },
+        {
+          "token1": "Salary is between ",
+          "token2": " and ",
+          "token3": ""
+        }
+      ]
+    },
+    {
+      "name": "age",
+      "editable": "1",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Age",
+      "dataType": "positive",
+      "defaultSortOrder": "0",
+      "width": "5%",
+      "hide": "0",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Age equals ",
+          "token2": ""
+        },
+        {
+          "token1": "Age is not greater than ",
+          "token2": ""
+        },
+        {
+          "token1": "Age is not greater than ",
+          "token2": ""
+        },
+        {
+          "token1": "Age is between ",
+          "token2": " and ",
+          "token3": ""
+        }
+      ]
+    },
+    {
+      "name": "zipcode",
+      "editable": "1",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Zipcode",
+      "dataType": "is",
+      "hide": "0",
+      "defaultSortOrder": "0",
+      "width": "5%",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Zipcode is ",
+          "token2": ""
+        },
+        {
+          "token1": "Zipcode is not ",
+          "token2": ""
+        }
+      ]
+    },
+    {
+      "name": "street",
+      "editable": "1",
+      "sortable": "0",
+      "searchable": "1",
+      "label": "Street",
+      "dataType": "like",
+      "defaultSortOrder": "0",
+      "hide": "0",
+      "width": "20%",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "Street contains ",
+          "token2": ""
+        },
+        {
+          "token1": "Street excludes ",
+          "token2": ""
+        }
+      ]
+    },
+    {
+      "name": "city",
+      "editable": "0",
+      "sortable": "0",
+      "searchable": "0",
+      "label": "City",
+      "dataType": "is",
+      "hide": "0",
+      "defaultSortOrder": "0",
+      "width": "10%",
+      "orderTokens": [
+        {
+          "token": "Lowest first",
+          "value": "0"
+        },
+        {
+          "token": "Highest first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "City is ",
+          "token2": ""
+        },
+        {
+          "token1": "City is not ",
+          "token2": ""
+        }
+      ]
+    },
+    {
+      "name": "state",
+      "editable": "0",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "State",
+      "dataType": "is",
+      "defaultSortOrder": "0",
+      "hide": "0",
+      "width": "5%",
+      "orderTokens": [
+        {
+          "token": "From A to Z",
+          "value": "0"
+        },
+        {
+          "token": "From Z to A",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token1": "State is ",
+          "token2": ""
+        },
+        {
+          "token1": "State is not ",
+          "token2": ""
+        }
+      ]
+    },
+    {
+      "name": "is_married",
+      "editable": "1",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Married",
+      "dataType": "bool",
+      "hide": "5",
+      "width": "9%",
+      "bool": [
+        {
+          "label": "No"
+        },
+        {
+          "label": "Yes"
+        }
+      ],
+      "orderTokens": [
+        {
+          "token": "Show unmarried first",
+          "value": "0"
+        },
+        {
+          "token": "Shou married first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token": "Unmarried only"
+        },
+        {
+          "token": "Married only"
+        }
+      ]
+    },
+    {
+      "name": "gender",
+      "editable": "1",
+      "sortable": "1",
+      "searchable": "1",
+      "label": "Gender",
+      "dataType": "bool",
+      "hide": "0",
+      "width": "8%",
+      "bool": [
+        {
+          "label": "Female"
+        },
+        {
+          "label": "Male"
+        }
+      ],
+      "orderTokens": [
+        {
+          "token": "Show female first",
+          "value": "0"
+        },
+        {
+          "token": "Show male first",
+          "value": "1"
+        }
+      ],
+      "tagTokens": [
+        {
+          "token": "Female only"
+        },
+        {
+          "token": "Male only"
+        }
+      ]
+    }
+  ],
+  "pageinfo": {
+    "editable": "1",
+    "addable": "0",
+    "aggregation_mode": "0",
+    "key": "0",
+    "add_button_text": "Add home customer",
+    "title": "Home Customer Viewer",
+    "intro": "You can see the list of home customers here."
+  }
+}

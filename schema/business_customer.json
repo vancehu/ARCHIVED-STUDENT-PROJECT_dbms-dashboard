@@ -1,0 +1,285 @@
+{
+    "cols": [
+        {
+            "name": "cid",
+            "editable": "0",
+            "searchable":"1",
+            "sortable":"1",
+            "label": "Customer ID",
+            "dataType": "is",
+            "hide": "0",
+            "defaultSortOrder": "0",
+            "width": "8%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Customer ID is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Customer ID is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "cname",
+            "editable": "1",
+            "searchable":"1",
+            "sortable":"1",
+            "label": "Customer Name",
+            "dataType": "like",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "15%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Customer name contains ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Customer name excludes ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "annual_income",
+            "editable": "1",
+            "searchable":"1",
+            "sortable":"1",
+            "label": "Annual Income",
+            "dataType": "currency",
+            "defaultSortOrder": "0",
+            "width": "8%",
+            "hide": "0",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Annual Income equals ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Annual Income is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Annual Income is not greater than ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Annual Income is between ",
+                    "token2": " and ",
+                    "token3": ""
+                }
+            ]
+        },
+        {
+            "name": "b_cid",
+            "editable": "1",
+            "searchable":"1",
+            "sortable":"1",
+            "label": "Business Category",
+            "hide": "0",
+            "dataType": "datapair",
+            "defaultSortOrder": "0",
+            "pair": {
+                "show": "b_cname",
+                "source": "server/business_category/get.php?sort=b_cname&order=0"
+            },
+            "width": "22%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "The Business Category is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "The Business Category is not ",
+                    "token2": ""
+                }
+            ]
+        },    {
+            "name": "zipcode",
+            "editable": "1",
+            "searchable":"1",
+            "sortable":"0",
+            "label": "Zipcode",
+            "dataType": "is",
+            "hide": "0",
+            "defaultSortOrder": "0",
+            "width": "5%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Zipcode is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Zipcode is not ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "street",
+            "editable": "1",
+            "searchable":"1",
+            "sortable":"0",
+            "label": "Street",
+            "dataType": "like",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "20%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "Street contains ",
+                    "token2": ""
+                },
+                {
+                    "token1": "Street excludes ",
+                    "token2": ""
+                }
+            ]
+        },
+        {
+            "name": "city",
+            "editable": "0",
+            "searchable":"0",
+            "sortable":"0",
+            "label": "City",
+            "dataType": "is",
+            "hide": "0",
+            "defaultSortOrder": "0",
+            "width": "10%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "Lowest first",
+                    "value": "0"
+                },
+                {
+                    "token": "Highest first",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "City is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "City is not ",
+                    "token2": ""
+                }
+            ]
+        },
+                        {
+            "name": "state",
+            "editable": "0",
+           "searchable":"1",
+            "sortable":"1",
+            "label": "State",
+            "dataType": "is",
+            "defaultSortOrder": "0",
+            "hide": "0",
+            "width": "10%",
+            "firstLine": "1",
+            "orderTokens": [
+                {
+                    "token": "From A to Z",
+                    "value": "0"
+                },
+                {
+                    "token": "From Z to A",
+                    "value": "1"
+                }
+            ],
+            "tagTokens": [
+                {
+                    "token1": "State is ",
+                    "token2": ""
+                },
+                {
+                    "token1": "State is not ",
+                    "token2": ""
+                }
+            ]
+        }
+
+
+    ],
+    "pageinfo": {
+
+        "editable": "1",
+        "addable": "1",
+        "aggregation_mode": "0",
+        "key": "0",
+        
+        "add_button_text": "Add new business customer",
+        "title": "Businee Customer Manager",
+        "intro": "Manage business customers here."
+    }
+}
