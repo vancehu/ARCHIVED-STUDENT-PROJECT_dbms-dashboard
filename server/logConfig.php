@@ -1,5 +1,5 @@
 <?php 
-$DB_LOG_HOST =  "localhost";
+$DB_HOST = $_ENV["DEMO_MYSQL_PORT_3306_TCP_ADDR"];
 $DB_LOG_USER = "root";
 $DB_LOG_PASS = "";
 $DB_LOG_NAME = "dbms_log";
