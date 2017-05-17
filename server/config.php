@@ -1,5 +1,5 @@
 <?php 
-$DB_HOST = $_ENV["DEMO_MYSQL_PORT_3306_TCP_ADDR"];
+$DB_HOST = "172.17.0.1";
 $DB_USER = "root";
 $DB_PASS = "helloworld";
 $DB_NAME = "dbms";
